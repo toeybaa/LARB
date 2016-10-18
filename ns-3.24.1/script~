@@ -1,0 +1,10 @@
+echo "test1"
+./waf --run "testMyhello --NS2traceFile=/home/toonnp/Desktop/urban_grid_4X4/g3_v2_1.tcl" > /home/toonnp/Desktop/test1.txt
+echo "test2"
+./waf --run "testMyhello --NS2traceFile=/home/toonnp/Desktop/urban_grid_4X4/g3_v2_2.tcl" > /home/toonnp/Desktop/test2.txt
+echo "test3"
+./waf --run "testMyhello --NS2traceFile=/home/toonnp/Desktop/urban_grid_4X4/g3_v2_3.tcl" > /home/toonnp/Desktop/test3.txt
+echo "test4"
+./waf --run "testMyhello --NS2traceFile=/home/toonnp/Desktop/urban_grid_4X4/g3_v2_4.tcl" > /home/toonnp/Desktop/test4.txt
+echo "test5"
+./waf --run "testMyhello --NS2traceFile=/home/toonnp/Desktop/urban_grid_4X4/g3_v2_5.tcl" > /home/toonnp/Desktop/test5.txt

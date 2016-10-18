@@ -1,0 +1,44 @@
+# -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+
+# def options(opt):
+#     pass
+
+# def configure(conf):
+#     conf.check_nonfatal(header_name='stdint.h', define_name='HAVE_STDINT_H')
+
+def build(bld):
+    module = bld.create_ns3_module('myhello', ['wifi'])
+    module.source = [
+        'model/myhello-routing-protocol.cc',
+        'model/myhello-packet.cc',
+        'model/myhello-queue.cc',
+        'model/myhello-table.cc',
+        'model/myhello-ptable.cc',
+        'model/myhello-btable.cc',
+        'model/myhello-nbtable.cc',
+        'helper/myhello-helper.cc',
+        ]
+
+    module_test = bld.create_ns3_module_test_library('myhello')
+    module_test.source = [
+        'test/myhello-test-suite.cc',
+        ]
+
+    headers = bld(features='ns3header')
+    headers.module = 'myhello'
+    headers.source = [
+        'model/myhello-routing-protocol.h',
+        'model/myhello-packet.h',
+        'model/myhello-queue.h',
+        'model/myhello-table.h',
+        'model/myhello-ptable.h',
+        'model/myhello-btable.h',
+        'model/myhello-nbtable.h',
+        'helper/myhello-helper.h',
+        ]
+
+    if bld.env.ENABLE_EXAMPLES:
+        bld.add_subdirs('examples')
+
+    # bld.ns3_python_bindings()
+
